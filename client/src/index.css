@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Fenix Brand Colors */
+  --fenix-gold: hsl(43, 74%, 52%);
+  --fenix-bronze: hsl(43, 45%, 62%);
+  --fenix-dark: hsl(0, 0%, 4%);
+  --fenix-darker: hsl(0, 0%, 2%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-fenix-dark text-white overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .fenix-gold {
+    color: var(--fenix-gold);
+  }
+  
+  .fenix-bronze {
+    color: var(--fenix-bronze);
+  }
+  
+  .bg-fenix-gold {
+    background-color: var(--fenix-gold);
+  }
+  
+  .bg-fenix-bronze {
+    background-color: var(--fenix-bronze);
+  }
+  
+  .bg-fenix-dark {
+    background-color: var(--fenix-dark);
+  }
+  
+  .bg-fenix-darker {
+    background-color: var(--fenix-darker);
+  }
+  
+  .border-fenix-gold {
+    border-color: var(--fenix-gold);
+  }
+  
+  .text-fenix-gold {
+    color: var(--fenix-gold);
+  }
+  
+  .text-fenix-bronze {
+    color: var(--fenix-bronze);
+  }
+  
+  .text-fenix-dark {
+    color: var(--fenix-dark);
+  }
+  
+  .hover\:text-fenix-gold:hover {
+    color: var(--fenix-gold);
+  }
+  
+  .hover\:bg-fenix-bronze:hover {
+    background-color: var(--fenix-bronze);
+  }
+  
+  .group:hover .group-hover\:text-fenix-dark {
+    color: var(--fenix-dark);
+  }
+  
+  .group:hover .group-hover\:bg-fenix-gold {
+    background-color: var(--fenix-gold);
+  }
+}
+
+/* Custom font styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation for hero section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Custom backdrop blur */
+.backdrop-blur-custom {
+  backdrop-filter: blur(10px);
+}
