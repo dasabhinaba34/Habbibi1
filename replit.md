@@ -41,6 +41,31 @@ Preferred communication style: Simple, everyday language.
 - **External Integration**: SevenRooms reservation system integration
 - **Content Management**: Static content with external asset support
 
+# Deployment Configuration
+
+## Build Process & Static Deployment Fix
+Due to Vite configuration constraints, the build output is created in `dist/public/` instead of the expected `dist/` directory. This causes deployment failures in Replit's static deployment system.
+
+**Solution**: Use the provided build script for proper deployment:
+```bash
+./fix-deployment.sh
+```
+
+This script:
+1. Runs the standard build process (`npm run build`)
+2. Moves all files from `dist/public/` to `dist/` 
+3. Removes the empty `public` subdirectory
+4. Ensures the `index.html` file is in the correct location for static deployment
+
+**Files involved**:
+- `fix-deployment.sh` - Main deployment preparation script
+- `scripts/fix-build-output.js` - Alternative Node.js implementation for file movement
+
+## Deployment Notes
+- Always run `./fix-deployment.sh` before deploying to ensure files are in the correct structure
+- The deployment configuration expects static files in `dist/` but Vite outputs to `dist/public/`
+- This solution works around the locked configuration files (`vite.config.ts`, `.replit`, `package.json`)
+
 # External Dependencies
 
 ## Database & ORM
